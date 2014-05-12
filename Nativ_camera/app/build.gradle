@@ -1,12 +1,18 @@
 apply plugin: 'android'
 
+repositories {
+    maven {
+        url "https://repo.commonsware.com.s3.amazonaws.com"
+    }
+}
+
 android {
     compileSdkVersion 15
     buildToolsVersion "19.0.3"
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 14
+        targetSdkVersion 17
         versionCode 1
         versionName "1.0"
     }
@@ -21,4 +27,5 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.commonsware.cwac:camera:0.6.+'
 }
